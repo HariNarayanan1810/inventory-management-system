@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.inventorydashboard.controller.PurchasePageController">
+
+    <top>
+        <Label text="Purchase Orders" style="-fx-font-size: 20;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <TableView fx:id="purchaseTable">
+                <columns>
+                    <TableColumn fx:id="idCol" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="paymentCol" text="Payment" prefWidth="120"/>
+                    <TableColumn fx:id="deliveryCol" text="Delivery" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <GridPane hgap="10" vgap="10">
+
+                <Label text="Supplier ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="supplierIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Warehouse ID:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="warehouseIdField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Payment Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="paymentStatusBox" promptText="Select Payment Status" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Delivery Status:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="deliveryStatusBox" promptText="Select Delivery Status" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Add" onAction="#addPurchase"/>
+                <Button text="Update" onAction="#updatePurchase"/>
+                <Button text="Delete" onAction="#deletePurchase"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

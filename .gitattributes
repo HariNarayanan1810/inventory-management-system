@@ -1,0 +1,8 @@
+* text=auto
+
+*.java text
+*.xml text
+*.fxml text
+*.properties text
+*.sql text
+*.md text

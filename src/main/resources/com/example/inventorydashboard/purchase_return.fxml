@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.inventorydashboard.controller.PurchaseReturnController">
+    <top>
+        <Label text="Purchase Returns" style="-fx-font-size: 20; -fx-font-weight: bold;" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <TableView fx:id="returnsTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="idCol" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="purchaseIdCol" text="Purchase ID" prefWidth="110"/>
+                    <TableColumn fx:id="productIdCol" text="Product ID" prefWidth="100"/>
+                    <TableColumn fx:id="quantityCol" text="Quantity" prefWidth="90"/>
+                    <TableColumn fx:id="reasonCol" text="Reason" prefWidth="260"/>
+                    <TableColumn fx:id="statusCol" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="dateCol" text="Date" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="Purchase ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="purchaseIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Product ID:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="productIdField" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                <Label text="Quantity:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="quantityField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Status:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <ComboBox fx:id="statusBox" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                <Label text="Reason:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextArea fx:id="reasonArea" prefRowCount="2" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Submit" onAction="#submitReturn"/>
+                <Button text="Clear" onAction="#clearForm"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

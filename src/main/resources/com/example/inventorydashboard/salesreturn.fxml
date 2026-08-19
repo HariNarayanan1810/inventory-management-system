@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.inventorydashboard.controller.SalesReturnController">
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Sales Return Entry" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <GridPane hgap="10" vgap="10">
+                <Label text="Retailer Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="retailerComboBox" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Product:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="productComboBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Quantity Returned:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="quantityField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Reason:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextArea fx:id="reasonArea" prefRowCount="2" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Button text="Submit Return" fx:id="submitButton" onAction="#handleSubmitReturn"
+                        GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Previous Sales Returns" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <TableView fx:id="returnsTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID"/>
+                    <TableColumn fx:id="colRetailer" text="Retailer"/>
+                    <TableColumn fx:id="colProduct" text="Product"/>
+                    <TableColumn fx:id="colQuantity" text="Quantity"/>
+                    <TableColumn fx:id="colReason" text="Reason"/>
+                    <TableColumn fx:id="colDate" text="Date"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

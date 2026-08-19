@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.inventorydashboard.controller.SalesController" >
+    <VBox spacing="10" alignment="TOP_LEFT" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <children>
+            <Label text="Sales Page" style="-fx-font-size: 24px;"/>
+
+            <HBox spacing="10">
+                <Label text="Customer Name:"/>
+                <TextField fx:id="customerNameField" promptText="Enter customer name"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Warehouse ID:"/>
+                <TextField fx:id="warehouseIdField" promptText="e.g., 1"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Product ID:"/>
+                <TextField fx:id="productIdField" promptText="e.g., 101"/>
+
+                <Label text="Quantity:"/>
+                <TextField fx:id="quantityField" promptText="e.g., 5"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Check Stock" onAction="#onCheckStock"/>
+                <Label fx:id="stockStatusLabel"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Save Order" onAction="#onSaveOrder"/>
+                <Button text="Generate Invoice" onAction="#onGenerateInvoice"/>
+            </HBox>
+        </children>
+    </VBox>
+</AnchorPane>
