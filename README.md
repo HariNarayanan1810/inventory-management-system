@@ -97,3 +97,11 @@ POST /api/auth/login
 5. Open the sales page, check stock, and generate an invoice PDF.
 6. Show sales return and purchase return records.
 7. Show the generated invoice file from the local `invoices/` folder.
+
+
+##Demo Video
+
+
+https://github.com/user-attachments/assets/13dd8d28-3540-496e-a7ae-d5fe2f8010cf
+
+
